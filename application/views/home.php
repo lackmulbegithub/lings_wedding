@@ -14,16 +14,25 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-            <div class="card">
-            <div class="card-header">
-            3.1. Count of all active and verified users
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Count of all active and verified users :</h5>
-                <p class="card-text"><?php echo $countOfActiveUsers ; ?></p>
-                
-            </div>
-            </div>
+                <div class="card">
+                    <div class="card-header">
+                    3.1. Count of all active and verified users
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Count of all active and verified users :</h5>
+                        <p class="card-text"><?php echo $countOfActiveUsers ; ?></p>                        
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                    3.2. Count of active and verified users who have attached active products
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Count of active and verified users who have attached active products :</h5>
+                        <p class="card-text"><?php echo $countOfActiveUsersOfAttachedActiveProducts ; ?></p>                        
+                    </div>
+                </div>
             </div>
         </div>
 
