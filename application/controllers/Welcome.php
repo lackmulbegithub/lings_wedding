@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['countOfActiveUsers'] = $this->getTotalActiveUsrs();
+		$data['countOfActiveUsersOfAttachedActiveProducts'] = $this->getCountOfActiveUsersOfAttachedActiveProducts();
 		$this->load->view('home',$data);
 	}
 
@@ -28,6 +29,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('user_model','users');
 		$data = $this->users->getActiveUserCount();
+		return $data;
+	}
+
+	private function getCountOfActiveUsersOfAttachedActiveProducts()
+	{
+		$this->load->model('user_model','users');
+		$data = $this->users->getCountOfActiveUsersOfAttachedActiveProducts();
 		return $data;
 	}
 }
