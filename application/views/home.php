@@ -63,6 +63,16 @@
                         <p class="card-text"><?php echo $amountOfActiveAttachedProducts ; ?></p>                        
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header">
+                    3.6. Summarized price of all active attached products
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">3.6. Summarized price of all active attached products :</h5>
+                        <p class="card-text"><?php echo $priceOfActiveAttachedProducts ; ?></p>                        
+                    </div>
+                </div>
             </div>
         </div>
 
