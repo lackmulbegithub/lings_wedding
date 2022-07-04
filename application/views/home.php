@@ -33,6 +33,16 @@
                         <p class="card-text"><?php echo $countOfActiveUsersOfAttachedActiveProducts ; ?></p>                        
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header">
+                    3.3. Count of all active products
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Count of all active products :</h5>
+                        <p class="card-text"><?php echo $activeProductsCount ; ?></p>                        
+                    </div>
+                </div>
             </div>
         </div>
 
