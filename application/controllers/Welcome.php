@@ -26,6 +26,7 @@ class Welcome extends CI_Controller {
 		$data['activeProductsNotBelongsToUser'] = $this->getActiveProductsNotBelongsToUser();
 		$data['amountOfActiveAttachedProducts'] = $this->getAmountOfActiveAttachedProducts();
 		$data['priceOfActiveAttachedProducts'] = $this->getPriceOfActiveAttachedProducts();
+		$data['summerizedPriceOfActiveProductsUserWise'] = $this->getSummerizedPriceOfActiveProductsUserWise();
 		$this->load->view('home',$data);
 	}
 
@@ -68,6 +69,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('product_model','products');
 		$data = $this->products->getPriceOfActiveAttachedProducts();
+		return $data;
+	}
+
+	private function getSummerizedPriceOfActiveProductsUserWise()
+	{
+		$this->load->model('product_model','products');
+		$data = $this->products->getSummerizedPriceOfActiveProductsUserWise();
 		return $data;
 	}
 }

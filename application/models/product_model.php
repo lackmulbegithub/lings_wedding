@@ -82,4 +82,30 @@ class Product_model extends CI_Model{
             return "No data found";
         }
     }
+
+    function getSummerizedPriceOfActiveProductsUserWise()
+    {
+        $table1 = $this->db->dbprefix('products pr');
+        $table2 = $this->db->dbprefix('user_product up');
+        $table3 = $this->db->dbprefix('users us');
+        $this->db->select('sum(up.qty * up.price) as prod_price,us.name');
+        $this->db->from($table2);
+        $this->db->join($table1,'pr.id=up.product_id');
+        $this->db->join($table3,'us.id = up.user_id');
+        $this->db->where('pr.is_active',1);
+        $this->db->group_by('up.user_id');
+        $query = $this->db->get();
+        if($query->num_rows() > 0)
+        {
+            $output = "";
+            foreach($query->result() as $rows){
+                $output = $output.", ".$rows->name." - ".$rows->prod_price."$";
+            }
+            $output = substr($output,1);
+            return $output;
+        }
+        else{
+            return "No data found";
+        }
+    }
 }
