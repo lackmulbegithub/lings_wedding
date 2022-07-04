@@ -73,6 +73,18 @@
                         <p class="card-text"><?php echo $priceOfActiveAttachedProducts ; ?></p>                        
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header">
+                    3.7. Summarized prices of all active products per user
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Summarized prices of all active products per user :</h5>
+                        <p class="card-text"><?php echo $summerizedPriceOfActiveProductsUserWise ; ?></p>                        
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
