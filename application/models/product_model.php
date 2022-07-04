@@ -46,4 +46,22 @@ class Product_model extends CI_Model{
             return "No data found";
         }
     }
+
+    function getAmountOfActiveAttachedProducts()
+    {
+        $table1 = $this->db->dbprefix('products pr');
+        $table2 = $this->db->dbprefix('user_product up');
+        $this->db->select('sum(up.qty) as prod_amount');
+        $this->db->from($table2);
+        $this->db->join($table1,'pr.id=up.product_id');
+        $this->db->where('pr.is_active',1);
+        $query = $this->db->get();
+        if($query->num_rows() > 0)
+        {
+            return $query->row()->prod_amount;
+        }
+        else{
+            return "No data found";
+        }
+    }
 }
