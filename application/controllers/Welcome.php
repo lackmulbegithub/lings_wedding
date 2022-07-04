@@ -20,6 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['countOfActiveUsers'] = $this->getTotalActiveUsrs();
+		$this->load->view('home',$data);
+	}
+
+	private function getTotalActiveUsrs()
+	{
+		$this->load->model('user_model','users');
+		$data = $this->users->getActiveUserCount();
+		return $data;
 	}
 }
