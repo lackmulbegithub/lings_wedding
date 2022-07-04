@@ -43,6 +43,16 @@
                         <p class="card-text"><?php echo $activeProductsCount ; ?></p>                        
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header">
+                    3.4. Count of active products which don't belong to any user
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Count of active products which don't belong to any user :</h5>
+                        <p class="card-text"><?php echo $activeProductsNotBelongsToUser ; ?></p>                        
+                    </div>
+                </div>
             </div>
         </div>
 
