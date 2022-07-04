@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 		$data['countOfActiveUsersOfAttachedActiveProducts'] = $this->getCountOfActiveUsersOfAttachedActiveProducts();
 		$data['activeProductsCount'] = $this->getActiveProductsCount();
 		$data['activeProductsNotBelongsToUser'] = $this->getActiveProductsNotBelongsToUser();
+		$data['amountOfActiveAttachedProducts'] = $this->getAmountOfActiveAttachedProducts();
 		$this->load->view('home',$data);
 	}
 
@@ -54,4 +55,12 @@ class Welcome extends CI_Controller {
 		$data = $this->products->getActiveProductsNotBelongsToUser();
 		return $data;
 	}
+
+	private function getAmountOfActiveAttachedProducts()
+	{
+		$this->load->model('product_model','products');
+		$data = $this->products->getAmountOfActiveAttachedProducts();
+		return $data;
+	}
+	
 }
